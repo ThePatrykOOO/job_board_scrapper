@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('job-offers', [\App\Http\Controllers\JobOfferController::class, 'index']);
+Route::get('job-offers/{id}', [\App\Http\Controllers\JobOfferController::class, 'show']);
